@@ -65,40 +65,42 @@ export default function ProvinsiPage() {
             {/* ========================================= */}
             {/* AREA FORM */}
             {/* ========================================= */}
-            <div className="max-w-md mx-auto mt-10 bg-white p-8 rounded-2xl shadow-sm ring-1 ring-slate-200">
-                <h2 className="text-2xl font-bold text-slate-800 mb-6">Tambah Provinsi</h2>
-                
-                <form onSubmit={handleSubmit} className="space-y-4">
-                    <div>
-                        <label className="block text-sm font-medium text-slate-700 mb-1">Nama Provinsi</label>
-                        <input
-                            type="text"
-                            required
-                            value={namaProvinsi}
-                            onChange={(e) => setNamaProvinsi(e.target.value)}
-                            className="w-full px-4 py-2 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
-                            placeholder="Contoh: Jawa Timur"
-                        />
-                    </div>
+            <div className="max-w-5xl mx-auto px-4 mt-10">
+                <div className="bg-white p-8 rounded-2xl shadow-sm ring-1 ring-slate-200">
+                    <h2 className="text-2xl font-bold text-slate-800 mb-6">Tambah Provinsi</h2>
+                    
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                        <div>
+                            <label className="block text-sm font-medium text-slate-700 mb-1">Nama Provinsi</label>
+                            <input
+                                type="text"
+                                required
+                                value={namaProvinsi}
+                                onChange={(e) => setNamaProvinsi(e.target.value)}
+                                className="w-full px-4 py-2 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                                placeholder="Contoh: Jawa Timur"
+                            />
+                        </div>
 
-                    <div className="flex gap-3 pt-4">
-                        <button 
-                            type="button" 
-                            onClick={() => setNamaProvinsi('')}
-                            className="px-4 py-2 bg-slate-100 text-slate-600 font-semibold rounded-xl hover:bg-slate-200 transition-colors w-full text-center"
-                        >
-                            Batal
-                        </button>
-                        <button
-                            type="submit"
-                            disabled={isSubmitting}
-                            style={{ backgroundColor: '#16a34a' }}
-                            className="px-4 py-2 text-white font-semibold rounded-xl hover:opacity-90 transition-all w-full disabled:opacity-50"
-                        >
-                            {isSubmitting ? 'Menyimpan...' : 'Simpan Data'}
-                        </button>
-                    </div>
-                </form>
+                        <div className="flex gap-3 pt-4">
+                            <button 
+                                type="button" 
+                                onClick={() => setNamaProvinsi('')}
+                                className="px-4 py-2 bg-slate-100 text-slate-600 font-semibold rounded-xl hover:bg-slate-200 transition-colors w-full text-center"
+                            >
+                                Batal
+                            </button>
+                            <button
+                                type="submit"
+                                disabled={isSubmitting}
+                                style={{ backgroundColor: '#16a34a' }}
+                                className="px-4 py-2 text-white font-semibold rounded-xl hover:opacity-90 transition-all w-full disabled:opacity-50"
+                            >
+                                {isSubmitting ? 'Menyimpan...' : 'Simpan Data'}
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
 
             {/* ========================================= */}

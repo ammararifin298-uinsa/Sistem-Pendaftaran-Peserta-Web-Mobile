@@ -6,6 +6,7 @@ const path = require('path'); // <-- 1. Tambahkan modul bawaan Node.js untuk men
 const provinsiRoutes = require('./routes/provinsiRoutes');
 const kabkoRoutes = require('./routes/kabkoRoutes');
 const pesertaRoutes = require('./routes/pesertaRoutes');
+const dashboardRoutes = require('./routes/dashboardRoutes');
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.get('/', (req, res) => {
     res.send('API Node.js & PostgreSQL berjalan...');
 });
 
+app.use('/dashboard', dashboardRoutes);
 app.use('/provinsi', provinsiRoutes);
 app.use('/kabko', kabkoRoutes);
 app.use('/peserta', pesertaRoutes);

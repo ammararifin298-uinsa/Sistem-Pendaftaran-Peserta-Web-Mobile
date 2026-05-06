@@ -99,60 +99,62 @@ export default function TambahKabkoPage() {
             {/* ========================================= */}
             {/* AREA FORM */}
             {/* ========================================= */}
-            <div className="max-w-md mx-auto mt-10 bg-white p-8 rounded-2xl shadow-sm ring-1 ring-slate-200">
-                <h2 className="text-2xl font-bold text-slate-800 mb-6">Tambah Kabupaten / Kota</h2>
+            <div className="max-w-5xl mx-auto px-4 mt-10">
+                <div className="bg-white p-8 rounded-2xl shadow-sm ring-1 ring-slate-200">
+                    <h2 className="text-2xl font-bold text-slate-800 mb-6">Tambah Kabupaten / Kota</h2>
 
-                <form onSubmit={handleSubmit} className="space-y-4">
-                    <div>
-                        <label className="block text-sm font-medium text-slate-700 mb-1">Pilih Provinsi</label>
-                        <select
-                            required
-                            value={selectedProvinsi}
-                            onChange={(e) => setSelectedProvinsi(e.target.value)}
-                            className="w-full px-4 py-2 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all appearance-none bg-white"
-                        >
-                            <option value="">-- Pilih Provinsi --</option>
-                            {provinsiList.map((prov) => (
-                                <option key={prov.id} value={prov.id}>
-                                    {prov.nama}
-                                </option>
-                            ))}
-                        </select>
-                    </div>
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                        <div>
+                            <label className="block text-sm font-medium text-slate-700 mb-1">Pilih Provinsi</label>
+                            <select
+                                required
+                                value={selectedProvinsi}
+                                onChange={(e) => setSelectedProvinsi(e.target.value)}
+                                className="w-full px-4 py-2 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all appearance-none bg-white"
+                            >
+                                <option value="">-- Pilih Provinsi --</option>
+                                {provinsiList.map((prov) => (
+                                    <option key={prov.id} value={prov.id}>
+                                        {prov.nama}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
 
-                    <div>
-                        <label className="block text-sm font-medium text-slate-700 mb-1">Nama Kabupaten / Kota</label>
-                        <input
-                            type="text"
-                            required
-                            value={namaKabko}
-                            onChange={(e) => setNamaKabko(e.target.value)}
-                            className="w-full px-4 py-2 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
-                            placeholder="Contoh: Kota Surabaya"
-                        />
-                    </div>
+                        <div>
+                            <label className="block text-sm font-medium text-slate-700 mb-1">Nama Kabupaten / Kota</label>
+                            <input
+                                type="text"
+                                required
+                                value={namaKabko}
+                                onChange={(e) => setNamaKabko(e.target.value)}
+                                className="w-full px-4 py-2 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                                placeholder="Contoh: Kota Surabaya"
+                            />
+                        </div>
 
-                    <div className="flex gap-3 pt-4">
-                        <button
-                            type="button"
-                            onClick={() => {
-                                setNamaKabko('');
-                                setSelectedProvinsi('');
-                            }}
-                            className="px-4 py-2 bg-slate-100 text-slate-600 font-semibold rounded-xl hover:bg-slate-200 transition-colors w-full text-center"
-                        >
-                            Batal
-                        </button>
-                        <button
-                            type="submit"
-                            disabled={isSubmitting}
-                            style={{ backgroundColor: '#7c3aed' }}
-                            className="px-4 py-2 text-white font-semibold rounded-xl hover:opacity-90 transition-all w-full disabled:opacity-50"
-                        >
-                            {isSubmitting ? 'Menyimpan...' : 'Simpan Data'}
-                        </button>
-                    </div>
-                </form>
+                        <div className="flex gap-3 pt-4">
+                            <button
+                                type="button"
+                                onClick={() => {
+                                    setNamaKabko('');
+                                    setSelectedProvinsi('');
+                                }}
+                                className="px-4 py-2 bg-slate-100 text-slate-600 font-semibold rounded-xl hover:bg-slate-200 transition-colors w-full text-center"
+                            >
+                                Batal
+                            </button>
+                            <button
+                                type="submit"
+                                disabled={isSubmitting}
+                                style={{ backgroundColor: '#7c3aed' }}
+                                className="px-4 py-2 text-white font-semibold rounded-xl hover:opacity-90 transition-all w-full disabled:opacity-50"
+                            >
+                                {isSubmitting ? 'Menyimpan...' : 'Simpan Data'}
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
 
             {/* ========================================= */}

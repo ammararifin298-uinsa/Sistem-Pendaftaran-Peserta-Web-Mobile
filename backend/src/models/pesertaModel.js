@@ -39,10 +39,13 @@ const getPesertaById = async (id) => {
 };
 
 const createPeserta = async (data) => {
-    const {
-        nama, tempatlahir, tanggallahir, agama, alamat,
-        telepon, jk, cita_cita, hobi, idkabko, pas_foto
+    let {
+        nama = null, tempatlahir = null, tanggallahir = null, agama = null, alamat = null,
+        telepon = null, jk = null, cita_cita = null, hobi = null, idkabko = null, pas_foto = null
     } = data;
+
+    if (tanggallahir === '') tanggallahir = null;
+    if (idkabko === '') idkabko = null;
 
     const query = `
         INSERT INTO peserta 
@@ -56,10 +59,13 @@ const createPeserta = async (data) => {
 };
 
 const updatePeserta = async (id, data) => {
-    const {
-        nama, tempatlahir, tanggallahir, agama, alamat,
-        telepon, jk, cita_cita, hobi, idkabko, pas_foto
+    let {
+        nama = null, tempatlahir = null, tanggallahir = null, agama = null, alamat = null,
+        telepon = null, jk = null, cita_cita = null, hobi = null, idkabko = null, pas_foto = null
     } = data;
+
+    if (tanggallahir === '') tanggallahir = null;
+    if (idkabko === '') idkabko = null;
 
     const query = `
         UPDATE peserta SET 
